@@ -1,0 +1,11 @@
+:host { 
+    display: flex;
+    flex-direction: column;
+}
+
+#return-btn, #edit-btn {
+    width: 300px;
+}
+#return-btn {
+    margin-top: 1rem;
+}

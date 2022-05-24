@@ -1,0 +1,61 @@
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+
+    ngx-material-timepicker-toggle::ng-deep svg{ 
+        fill: #FFF;
+    }
+
+
+    ::ng-deep .mat-select-panel {
+        max-height: 80vh !important;
+    }
+
+    mat-form-field { 
+        &.clickable { 
+            cursor: pointer!important;
+
+            &:hover {
+                opacity: 0.3;
+            }
+
+            mat-select::ng-deep div {
+                cursor: pointer!important;
+            }
+
+  
+        }
+    }
+
+    #slider {
+        margin-bottom: 1rem;
+    }
+
+    #bottom-divider {
+        margin-bottom: 1rem;
+    }
+    
+    .w100 {
+        width: 100%;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+    -moz-appearance: textfield;
+    }
+
+    .expandable-filled {
+        mat-expansion-panel {
+            background: none !important;
+            border: 1px solid #ffffff42 !important;
+        }
+
+    }
+}

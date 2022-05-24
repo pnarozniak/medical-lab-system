@@ -1,0 +1,12 @@
+<h2>{{'PATIENTS.EDIT_TITLE' | translate}}</h2>
+<ng-container *ngIf="patient">
+    <patient-form
+        [patient]="patient"
+        [onValidSubmit]="editPatient"
+        [submitText]="'GLOBAL.SAVE_CHANGES'"
+        [returnUrl]="['/patients', patient.id.toString(), 'details']">
+    </patient-form>
+    <button id="return-btn" mat-raised-button color="basic" [routerLink]="['/patients']">
+        <span>{{'GLOBAL.CANCEL' | translate}}</span>
+    </button>
+</ng-container>

@@ -1,0 +1,9 @@
+<h2>{{'TESTS.NEW_TITLE' | translate}}</h2>
+<test-form 
+    [submitText]="'TESTS.ADD'"
+    [onValidSubmit]="createTest"
+    [returnUrl]="['/tests/new']">
+</test-form>
+<button id="return-btn" mat-raised-button color="basic" [routerLink]="['/tests']">
+    <span>{{'GLOBAL.CANCEL' | translate}}</span>
+</button>

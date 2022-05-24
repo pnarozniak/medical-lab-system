@@ -1,0 +1,91 @@
+<form [formGroup]="fg" (ngSubmit)="handleSubmit()">
+
+    <mat-form-field appearance="outline">
+        <mat-label>{{'PATIENTS.FIRST_NAME' | translate}}</mat-label>
+        <input matInput type="text" formControlName="firstName">
+
+        <mat-error *ngIf="firstName?.errors?.['required']">
+          {{ 'VALIDATION.FIELD_REQUIRED' | translate}}
+        </mat-error>
+        <mat-error *ngIf="firstName?.errors?.['minlength']">
+          {{ 'VALIDATION.LENGTH.MIN' | translate: { value: 2 } }}
+        </mat-error>
+        <mat-error *ngIf="firstName?.errors?.['maxlength']">
+          {{ 'VALIDATION.LENGTH.MAX' | translate: { value: 30 } }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PATIENTS.LAST_NAME' | translate}}</mat-label>
+        <input matInput type="text" formControlName="lastName">
+
+        <mat-error *ngIf="lastName?.errors?.['required']">
+          {{ 'VALIDATION.FIELD_REQUIRED' | translate}}
+        </mat-error>
+        <mat-error *ngIf="lastName?.errors?.['minlength']">
+          {{ 'VALIDATION.LENGTH.MIN' | translate: { value: 2 } }}
+        </mat-error>
+        <mat-error *ngIf="lastName?.errors?.['maxlength']">
+          {{ 'VALIDATION.LENGTH.MAX' | translate: { value: 30 } }}
+        </mat-error>
+      </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>{{'AUTH.EMAIL' | translate}}</mat-label>
+        <input matInput type="text" formControlName="email">
+
+        <mat-error *ngIf="email?.errors?.['required']">{{'VALIDATION.FIELD_REQUIRED' | translate}}</mat-error>
+        <mat-error *ngIf="email?.errors?.['forbiddenEmail'] && !email?.errors?.['minlength'] && !email?.errors?.['maxlength']">
+            {{'VALIDATION.WRONG_FORMAT' | translate}}
+        </mat-error>
+        <mat-error *ngIf="email?.errors?.['minlength']">
+            {{ 'VALIDATION.LENGTH.MIN' | translate: { value: 3 } }}
+        </mat-error>
+        <mat-error *ngIf="email?.errors?.['maxlength']">
+            {{ 'VALIDATION.LENGTH.MAX' | translate: { value: 60 } }}
+        </mat-error>
+        <mat-error *ngIf="showEmailAlreadyTaken">
+          {{ 'VALIDATION.EMAIL_ALREADY_TAKEN' | translate}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>{{'AUTH.PASSWORD' | translate}}</mat-label>
+        <input matInput type="password" formControlName="password">
+
+        <mat-error *ngIf="password?.errors?.['required']">{{'VALIDATION.FIELD_REQUIRED' | translate}}</mat-error>
+        <mat-error *ngIf="password?.errors?.['forbiddenPassword' ]&& !password?.errors?.['minlength'] && !password?.errors?.['maxlength']">
+            {{'VALIDATION.FORBIDDEN_PASSWORD' | translate}}
+        </mat-error>
+        <mat-error *ngIf="password?.errors?.['minlength']">
+            {{ 'VALIDATION.LENGTH.MIN' | translate: { value: 6 } }}
+        </mat-error>
+        <mat-error *ngIf="password?.errors?.['maxlength']">
+            {{ 'VALIDATION.LENGTH.MAX' | translate: { value: 32 } }}
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>{{'AUTH.ROLES.NAME' | translate}}</mat-label>
+        <mat-select formControlName="roles" multiple>
+          <mat-option value="admin">
+            {{'AUTH.ROLES.ADMIN' | translate}}
+          </mat-option>
+          <mat-option value="laborant">
+            {{'AUTH.ROLES.LABORANT' | translate}}
+          </mat-option>
+          <mat-option value="registrator">
+            {{'AUTH.ROLES.REGISTRATOR' | translate}}
+          </mat-option>
+        </mat-select>
+
+        <mat-error *ngIf="roles?.errors?.['required']">
+          {{ 'VALIDATION.FIELD_REQUIRED' | translate}}
+        </mat-error>
+      </mat-form-field>
+
+
+    <button mat-raised-button color="accent" type="submit">
+        <span>{{submitText | translate}}</span>
+    </button>
+</form>

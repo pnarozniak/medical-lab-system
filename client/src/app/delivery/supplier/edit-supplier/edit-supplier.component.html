@@ -1,0 +1,12 @@
+<h2>{{'SUPPLIERS.EDIT_TITLE' | translate}}</h2>
+<ng-container *ngIf="supplier">
+    <supplier-form
+        [supplier]="supplier"
+        [onValidSubmit]="editSupplier"
+        [submitText]="'GLOBAL.SAVE_CHANGES'"
+        [returnUrl]="['/delivery/suppliers', supplier.id.toString(), 'details']">
+    </supplier-form>
+    <button id="return-btn" mat-raised-button color="basic" [routerLink]="['/delivery']">
+        <span>{{'GLOBAL.CANCEL' | translate}}</span>
+    </button>
+</ng-container>

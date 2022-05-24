@@ -1,0 +1,27 @@
+<table>
+    <thead>
+        <tr>
+            <th *ngFor="let column of columns">{{column | translate}}</th>
+            <th *ngIf="actionColumn">{{'GLOBAL.LIST_ACTIONS' | translate}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of items" [ngClass]="{'clickable-row': clickableRow}" (click)="handleRowClicked(item)">
+            <ng-container 
+                [ngTemplateOutlet]="itemTemplate"
+                [ngTemplateOutletContext]="{$implicit: item}">
+            </ng-container>
+            <td *ngIf="actionColumn">
+                <a id="delete-btn" (click)="onDelete(item)">
+                    <mat-icon>delete_forever</mat-icon>
+                </a>
+                <a [routerLink]="[actionPrefix, item.id, 'edit']">
+                    <mat-icon>edit</mat-icon>
+                </a>
+                <a [routerLink]="[actionPrefix, item.id, 'details']">
+                    <mat-icon>info</mat-icon>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,9 @@
+<h2>{{'EMPLOYEES.NEW_TITLE' | translate}}</h2>
+<employee-form 
+    [submitText]="'EMPLOYEES.ADD'"
+    [onValidSubmit]="createEmployee"
+    [returnUrl]="['/employees/new']">
+</employee-form>
+<button id="return-btn" mat-raised-button color="basic" [routerLink]="['/employees']">
+    <span>{{'GLOBAL.CANCEL' | translate}}</span>
+</button>

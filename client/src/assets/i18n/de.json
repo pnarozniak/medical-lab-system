@@ -1,0 +1,226 @@
+{ 
+  "TOP_BAR": {
+    "de": "Deustch",
+    "pl": "Polnisch",
+    "en": "Englisch"
+  },
+  "SIDE_BAR": {
+    "HOME": "Heim",
+    "PATIENTS": "Patienten", 
+    "TESTS": "Testen",
+    "EXAMINATIONS": "Prüfungen",
+    "EMPLOYEES": "Angestellte",
+    "DELIVERY": "Lagerhaus",
+    "LOGIN": "Einloggen", 
+    "LOGOUT": "Ausloggen"
+  },
+  "AUTH": {
+    "LOGIN_TITLE": "Einloggen",
+    "EMAIL": "E-mail Adresse",
+    "PASSWORD": "Passwort", 
+    "LOGIN": "Einloggen",
+    "ROLES": {
+      "NAME": "Rolle", 
+      "ADMIN": "Administrator", 
+      "REGISTRATOR": "Recorder",
+      "LABORANT": "Labortechniker"
+    }
+  },
+  "HOME": {
+    "TITLE": "Heim",
+    "GENERAL_DESCRIPTION": "Willkommen beim System zur Unterstützung der Verwaltung eines medizinischen Labors \"NowMed\".",
+    "LIST": {
+      "HEADER": "Das System ermöglicht die Verwaltung",
+      "PATIENTS": "Patienten",
+      "TESTS": "Testen",
+      "EXAMINATIONS": "Prüfungen",
+      "EMPLOYEES": "Angestellten",
+      "DELIVERY": "Lieferung von Tests",
+      "SUPPLIERS": "Anbieteren"
+    }
+  },
+  "PATIENTS": {
+    "LIST_TITLE": "Patientenliste", 
+    "NEW_TITLE": "Neuer Patient",
+    "EDIT_TITLE": "Patient bearbeiten",
+    "DETAILS": {
+      "TITLE": "Patientendaten",
+      "EXAMINATIONS_LIST_TITLE": "Patienten Prüfungen"
+    },
+    "TRY_DELETE_TITLE": "Der Patient wird entfernt",
+    "TYPE": "Patient",
+    "FIRST_NAME": "Vorname",
+    "LAST_NAME": "Nachname",
+    "EMAIL": "E-mail Adresse",
+    "PHONE_NUMBER": "Telefonnummer",
+    "BIRTHDATE": "Geburtsdatum", 
+    "GENDER": {
+      "NAME": "Sex",
+      "MALE": "Mann",
+      "FEMALE": "Frau",
+      "NONE": "Unzutreffend"
+    },
+    "ADD": "Patienten hinzufügen"
+  },
+  "TESTS": {
+    "LIST_TITLE": "Testenliste",
+    "NEW_TITLE": "Neuer Test", 
+    "EDIT_TITLE": "Test bearbeiten", 
+    "DETAILS": {
+      "TITLE": "Testendaten",
+      "EXAMINATIONS_LIST_TITLE": "Verbunden Prüfungen"
+    },
+    "TRY_DELETE_TITLE": "Der Test wird entfernt",
+    "TYPE": "Testtyp",
+    "NAME": "Name", 
+    "EFFECTIVENESS": "Wirksamkeit",
+    "ESTIMATED_DURATION": "Geschätzte Dauer",
+    "CONTRAINDICATIONS": "Kontraindikationen",
+    "ADD": "Testen hinzufügen"
+  },
+  "EXAMINATIONS": {
+    "LIST_TITLE": "Prüfungenliste",
+    "NEW_TITLE": "Neuer Prüfung",
+    "EDIT_TITLE": "Prüfung bearbeiten",
+    "DETAILS_TITLE": "Prüfungendaten",
+    "TRY_DELETE_TITLE": "Der Prüfung wird entfernt",
+    "ARRANGED_AT": "Datum der Prüfung", 
+    "ARRANGED_AT_TIME": "Zeit der Prüfung",
+    "ARRANGED_AT_DATE": "Datum der Prüfung",
+    "RESULT": {
+      "NAME": "Ergebnis", 
+      "POSITIVE": "Positiv",
+      "NEGATIVE": "Negativ",
+      "NONE": "Mangel" 
+    },
+    "REFERAL": "Verweisung",
+    "ADD": "Prüfungen hinzufügen"
+  },
+  "EMPLOYEES": {
+    "LIST_TITLE": "Angestelltenliste", 
+    "NEW_TITLE": "Neuer Angestellte",
+    "DETAILS_TITLE": "Angestelltendaten",
+    "EDIT_TITLE": "Angestellte bearbeiten",
+    "ADD": "Angestellte hinzufügen",
+    "TRY_DELETE_TITLE": "Der Angestellte wird entfernt"
+  },
+  "DELIVERY": {
+    "LIST_TITLE": "Lieferungenliste",
+    "NEW_TITLE": "Neuer Lieferung",
+    "DETAILS": {
+      "TITLE": "Lieferungendaten",
+      "DELIVERY_CONTENT_LIST_TITLE": "Lieferungen Inhalt"
+    },
+    "EDIT_TITLE": "Lieferung bearbeiten",
+    "ADD": "Lieferung hinzufügen",
+    "ID": "Identifier",
+    "PLANNED_AT": "Geplant",
+    "DELIVERED_AT": "Geliefert",
+    "TRY_DELETE_TITLE": "Die Lieferung wird gelöscht",
+    "SUPPLIER": "Anbieter",
+    "COMMENTS": "Bemerkungen",
+    "WAREHOUSE_REPORTS": "Lagerberichte",
+    "SUPPLIERS_&_DELIVERY": "Anbieter & Lieferung",
+    "GENERATE_REPORT": "Erstellen Sie einen Bericht",
+    "REPORT_START": "Startdatum des Berichts",
+    "REPORT_END": "Enddatum des Berichts",
+    "REPORT_DEMAND": "Analysieren Sie die Nachfrage",
+    "GENERATING_REPORT": "Erstellen eines Berichts..."
+  },
+  "DELIVERY_CONTENT": {
+    "AMOUNT": "Menge",
+    "EXPIRES_AT": "Ablaufdatum",
+    "ADD": "Sache hinzufügen",
+    "REMOVE": "Sache Löschen"
+  },
+  "SUPPLIERS": {
+    "LIST_TITLE": "Anbieterenliste",
+    "NEW_TITLE": "Neuer Anbieter",
+    "EDIT_TITLE": "Anbieter bearbeiten",
+    "DETAILS": {
+      "TITLE": "Anbieterdaten",
+      "DELIVERY_LIST_TITLE": "Realisierte Lieferungen"
+    },
+    "ADD": "Anbieteren hinzufügen",
+    "NAME": "Name",
+    "CONTACT_EMAIL": "Kontakt E-mail Adresse",
+    "TRY_DELETE_TITLE": "Die Anbieter wird gelöscht"
+  },
+  "GLOBAL": {
+    "LIST_ACTIONS": "Aktionen",
+    "YES": "Ja", 
+    "NO": "Nein",
+    "CANCEL": "Abbrechen",
+    "RETURN": "Zurückkehren",
+    "ARE_YOU_SURE": "Bist du sicher",
+    "SAVE_CHANGES": "Änderungen speichern",
+    "EDIT": "Bearbeiten",
+    "TIME": {
+      "H": "Std", 
+      "M": "Minuten",
+      "S": "Sekunden"
+    }
+  },
+  "ALERTS": {
+    "SUCCESS": {
+      "LOGIN": "Sie sind eingeloggt",
+      "LOGGED_OUT": "Sie wurden ausgeloggt",
+      "PATIENT_DELETED": "Der Patient wurde entfernt",
+      "PATIENT_CREATED": "Der Patient wurde hinzugefügt",
+      "PATIENT_EDITED": "Der Patient wurde geändert",
+      "TEST_DELETED": "Der Test wurde gelöscht", 
+      "TEST_CREATED": "Der Test wurde hinzugefügt", 
+      "TEST_EDITED": "Der Test wurde geändert",
+      "EXAMINATION_DELETED": "Die Prüfung wurde entfernt",
+      "EXAMINATION_CREATED": "Die Prüfung wurde hinzugefügt",
+      "EXAMINATION_EDITED": "Die Prüfung wurde geändert",
+      "EMPLOYEE_DELETED": "Der Angestellte wurde entfernt",
+      "EMPLOYEE_CREATED": "Der Angestellte wurde hinzugefügt",
+      "EMPLOYEE_EDITED": "Der Angestellte wurde geändert",
+      "SUPPLIER_DELETED": "Der Anbieter wurde entfernt",
+      "SUPPLIER_CREATED": "Der Anbieter wurde hinzugefügt",
+      "SUPPLIER_EDITED": "Der Anbieter wurde geändert",
+      "DELIVERY_DELETED": "Die Lieferung wurde entfernt",
+      "DELIVERY_CREATED": "Die Lieferung wurde hinzugefügt",
+      "DELIVERY_EDITED": "Die Lieferung wurde geändert",
+      "REPORT_GENERATED": "Der Bericht wurde erstellt"
+    },
+    "ERROR": {
+      "PATIENT_NOT_DELETED": "Fehler beim Entfernen des Patienten",
+      "PATIENT_NOT_FOUND": "Patient nicht gefunden",
+      "TEST_NOT_DELETED": "Fehler beim Löschen des Tests",
+      "TEST_NOT_FOUND": "Test nicht gefunden",
+      "EXAMINATION_NOT_DELETED": "Fehler beim Löschen des Prüfung",
+      "EXAMINATION_NOT_FOUND": "Prüfung nicht gefunden",
+      "EMPLOYEE_NOT_FOUND": "Angestellte nicht gefunden",
+      "EMPLOYEE_NOT_DELETED": "Fehler beim Löschen des Angestellte",
+      "SUPPLIER_NOT_FOUND": "Anbieter nicht gefunden",
+      "SUPPLIER_NOT_DELETED": "Fehler beim Löschen des Anbieter",
+      "DELIVERY_NOT_DELETED": "Fehler beim Löschen des Lieferung",
+      "SESSION_EXPIRED": "Die Sitzung ist abgelaufen", 
+      "DELIVERY_NOT_FOUND": "Lieferung nicht gefundena",
+      "LOGIN_REQUIRED": "Dazu müssen Sie eingeloggt sein",
+      "NO_ACCESS": "Dazu sind Sie nicht berechtigt",
+      "REPORT_NOT_GENERATED": "Fehler beim Generieren des Berichts"
+    }
+  },
+  "VALIDATION": {
+    "WRONG_CREDENTIALS": "Falsche Email oder Passwort",
+    "SUBMIT_ERROR": "Beim Validieren des Formulars ist ein Fehler aufgetreten",
+    "FIELD_REQUIRED": "Dieses Feld ist erforderlich",
+    "HH:MM": "SS:MM",
+    "REQUIRED_FORMAT_IS_HH:MM": "Das erforderliche Format ist SS:MM",
+    "WRONG_FORMAT": "Falsches Format",
+    "FORBIDDEN_PASSWORD": "Mindestens 1 Ziffer und 1 Großbuchstabe",
+    "MAX_ACCURACY": "Genauigkeit bis zu {{value}} Dezimalzahlen",
+    "EMAIL_ALREADY_TAKEN": "Die E-Mail-Adresse ist bereits vergeben",
+    "LENGTH": {
+      "MIN": "Das Feld muss mindestens {{value}} Zeichen enthalten",
+      "MAX": "Das Feld darf bis zu {{value}} Zeichen enthalten"
+    },
+    "VALUE": {
+      "MIN": "Der minimale Wert ist {{value}}",
+      "MAX": "Der maximale Wert ist {{value}}"
+    }
+  }
+}

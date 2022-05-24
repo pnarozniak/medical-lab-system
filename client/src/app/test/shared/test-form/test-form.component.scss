@@ -1,0 +1,29 @@
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+    -moz-appearance: textfield;
+    }
+
+    #estimated-duration-wrapper {
+        display: flex;
+        max-width: 100%;
+
+        mat-form-field {
+            width: 30%;
+
+            &:nth-child(even) {
+                margin: 0 auto;
+            }
+        }
+    }
+}

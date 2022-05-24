@@ -1,0 +1,13 @@
+<h2>{{'EXAMINATIONS.DETAILS_TITLE' | translate}}</h2>
+<ng-container *ngIf="examination">
+    <examination-form
+    [examination]="examination"
+    [disabled]="true">
+    </examination-form>
+    <button id="edit-btn" mat-raised-button color="basic" [routerLink]="['/examinations', examination.id, 'edit']">
+        <span>{{'GLOBAL.EDIT' | translate}}</span>
+    </button>
+    <button id="return-btn" mat-raised-button color="basic" [routerLink]="['/examinations']">
+        <span>{{'GLOBAL.RETURN' | translate}}</span>
+    </button>
+</ng-container>

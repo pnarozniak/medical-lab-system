@@ -1,0 +1,9 @@
+<h2>{{'SUPPLIERS.NEW_TITLE' | translate}}</h2>
+<supplier-form 
+    [submitText]="'SUPPLIERS.ADD'"
+    [onValidSubmit]="createSupplier"
+    [returnUrl]="['/delivery/suppliers/new']">
+</supplier-form>
+<button id="return-btn" mat-raised-button color="basic" [routerLink]="['/delivery']">
+    <span>{{'GLOBAL.CANCEL' | translate}}</span>
+</button>

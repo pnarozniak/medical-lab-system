@@ -1,0 +1,13 @@
+$side-bar-width: 66px;
+
+.page-wrapper {
+    position: relative;
+    left: 66px;
+    width: calc(100% - $side-bar-width);
+    padding-bottom: 4rem;
+
+    .content-wrapper {
+        padding-left: 2rem;
+        padding-top: 2rem;
+    }
+}

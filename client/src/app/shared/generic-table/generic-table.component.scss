@@ -1,0 +1,39 @@
+table {
+    border-collapse: collapse;
+
+    .clickable-row {
+        cursor: pointer;
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+
+    th { 
+        border: 1px solid #343638;
+        padding: 0.5rem 1rem;
+        font-weight: 500;
+        font-size: 18px;
+    }
+
+    th, tr:nth-child(even) {
+        background-color: #1e1f1f;
+    }
+
+    ::ng-deep {
+        td{
+            text-align: center;
+            max-width: 300px;
+            overflow-wrap: break-word;
+            padding: 1rem 1rem;
+            border: 1px solid #343638;
+        }
+    }
+
+    #delete-btn {
+        cursor: pointer;
+    }
+
+    mat-icon {
+        padding: 0 .3rem
+    }
+}

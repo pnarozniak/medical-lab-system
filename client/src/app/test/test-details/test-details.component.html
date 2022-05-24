@@ -1,0 +1,33 @@
+<div class="col-wrapper" id="left-col-wrapper">
+    <h2>{{'TESTS.DETAILS.TITLE' | translate}}</h2>
+    <ng-container *ngIf="test">
+        <test-form
+            [test]="test"
+            [disabled]="true">
+        </test-form>
+        <button id="edit-btn" mat-raised-button color="basic" [routerLink]="['/tests', test.id, 'edit']">
+            <span>{{'GLOBAL.EDIT' | translate}}</span>
+        </button>
+        <button id="return-btn" mat-raised-button color="basic" [routerLink]="['/tests']">
+            <span>{{'GLOBAL.RETURN' | translate}}</span>
+        </button>
+    </ng-container>
+</div>
+<div class="col-wrapper">
+    <h2>{{'TESTS.DETAILS.EXAMINATIONS_LIST_TITLE' | translate}}</h2>
+    <ng-container *ngIf="test">
+        <generic-table
+            [columns]="['EXAMINATIONS.ARRANGED_AT', 'EXAMINATIONS.RESULT.NAME', 'PATIENTS.TYPE']"
+            [items]="test.examinations"
+            [itemTemplate]="itemTemplate"
+            [actionColumn]="false"
+            [clickableRow]="true"
+            (rowClickedEmitter)="showExaminationDetails($event)">
+            <ng-template #itemTemplate let-examination []>
+                <td>{{examination.arrangedAt.toLocaleString()}}</td>
+                <td>{{(examination.result ? 'EXAMINATIONS.RESULT.POSITIVE' : examination.result === false ? 'EXAMINATIONS.RESULT.NEGATIVE' : 'EXAMINATIONS.RESULT.NONE') | translate}}</td>
+                <td>{{examination.patient.firstName }} {{examination.patient.lastName }}</td>
+             </ng-template>
+        </generic-table>
+    </ng-container>
+</div>

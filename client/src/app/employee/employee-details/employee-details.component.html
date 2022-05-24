@@ -1,0 +1,13 @@
+<h2>{{'EMPLOYEES.DETAILS_TITLE' | translate}}</h2>
+<ng-container *ngIf="employee">
+    <employee-form
+    [employee]="employee"
+    [disabled]="true">
+    </employee-form>
+    <button id="edit-btn" mat-raised-button color="basic" [routerLink]="['/employees', employee.id, 'edit']">
+        <span>{{'GLOBAL.EDIT' | translate}}</span>
+    </button>
+    <button id="return-btn" mat-raised-button color="basic" [routerLink]="['/employees']">
+        <span>{{'GLOBAL.RETURN' | translate}}</span>
+    </button>
+</ng-container>

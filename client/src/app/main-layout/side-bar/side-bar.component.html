@@ -1,0 +1,57 @@
+<nav [ngClass]="{'responsive': isResponsive}">
+    <ul *ngIf="authService.loggedUser else guest">
+        <li>
+            <a [routerLink]="['/']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+                <mat-icon>home</mat-icon>
+                <span>{{'SIDE_BAR.HOME' | translate}}</span>
+            </a>
+        </li>
+        <li *ngIf="authService.loggedUser.hasRole(['admin'])">
+            <a [routerLink]="['/employees']" [routerLinkActive]="['active']">
+                <mat-icon>work</mat-icon>
+                <span>{{'SIDE_BAR.EMPLOYEES' | translate}}</span>
+            </a>
+        </li>
+        <li *ngIf="authService.loggedUser.hasRole(['admin'])">
+            <a [routerLink]="['/delivery']" [routerLinkActive]="['active']">
+                <mat-icon>airport_shuttle</mat-icon>
+                <span>{{'SIDE_BAR.DELIVERY' | translate}}</span>
+            </a>
+        </li>
+        <li *ngIf="authService.loggedUser.hasRole(['admin', 'registrator', 'laborant'])">
+            <a [routerLink]="['/patients']" [routerLinkActive]="['active']">
+                <mat-icon>people</mat-icon>
+                <span>{{'SIDE_BAR.PATIENTS' | translate}}</span>
+            </a>
+        </li>
+        <li *ngIf="authService.loggedUser.hasRole(['admin', 'registrator', 'laborant'])">
+            <a [routerLink]="['/tests']" [routerLinkActive]="['active']">
+                <mat-icon>invert_colors</mat-icon>
+                <span>{{'SIDE_BAR.TESTS' | translate}}</span>
+            </a>
+        </li>
+        <li *ngIf="authService.loggedUser.hasRole(['admin', 'registrator', 'laborant'])">
+            <a [routerLink]="['/examinations']" [routerLinkActive]="['active']">
+                <mat-icon>event_note</mat-icon>
+                <span>{{'SIDE_BAR.EXAMINATIONS' | translate}}</span>
+            </a>
+        </li>
+
+        <li class="last-item">
+            <a [routerLink]="['/auth/logout']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+                <mat-icon>logout</mat-icon>
+                <span>{{'SIDE_BAR.LOGOUT' | translate}}</span>
+            </a>
+        </li>
+    </ul>
+    <ng-template #guest>
+        <ul>
+            <li>
+                <a [routerLink]="['/auth/login']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+                    <mat-icon>login</mat-icon>
+                    <span>{{'SIDE_BAR.LOGIN' | translate}}</span>
+                </a>
+            </li>
+        </ul>
+    </ng-template>
+</nav>

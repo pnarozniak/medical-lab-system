@@ -1,0 +1,17 @@
+<h2>{{'PATIENTS.LIST_TITLE' | translate}}</h2>
+<button id="add-btn" mat-raised-button color="accent" [routerLink]="['/patients/new']">
+    <span>{{'PATIENTS.ADD' | translate}}</span>
+</button>
+<generic-table 
+    [columns]="['PATIENTS.FIRST_NAME', 'PATIENTS.LAST_NAME', 'PATIENTS.EMAIL', 'PATIENTS.PHONE_NUMBER']"
+    [items]="patients"
+    [itemTemplate]="itemTemplate"
+    [actionPrefix]="'/patients'"
+    [onDelete]="tryDelete">
+    <ng-template #itemTemplate let-patient>
+       <td>{{patient.firstName}}</td>
+       <td>{{patient.lastName}}</td>
+       <td>{{patient.email}}</td>
+       <td>{{patient.phoneNumber ?? '-'}}</td>
+    </ng-template>
+</generic-table>

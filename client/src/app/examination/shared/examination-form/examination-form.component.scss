@@ -1,0 +1,33 @@
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+
+    ngx-material-timepicker-toggle::ng-deep svg{ 
+        fill: #FFF;
+    }
+
+
+    ::ng-deep .mat-select-panel {
+        max-height: 80vh !important;
+    }
+
+    mat-form-field { 
+        &.clickable { 
+            cursor: pointer!important;
+
+            &:hover {
+                opacity: 0.3;
+            }
+
+            mat-select::ng-deep div {
+                cursor: pointer!important;
+            }
+
+  
+        }
+    }
+
+
+    
+}

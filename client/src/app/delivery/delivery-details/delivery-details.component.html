@@ -1,0 +1,33 @@
+<div class="col-wrapper" id="left-col-wrapper">
+    <h2>{{'DELIVERY.DETAILS.TITLE' | translate}}</h2>
+    <ng-container *ngIf="delivery">
+        <delivery-form
+            [delivery]="delivery"
+            [disabled]="true">
+        </delivery-form>
+        <button id="edit-btn" mat-raised-button color="basic" [routerLink]="['/delivery', delivery.id, 'edit']">
+            <span>{{'GLOBAL.EDIT' | translate}}</span>
+        </button>
+        <button id="return-btn" mat-raised-button color="basic" [routerLink]="['/delivery']">
+            <span>{{'GLOBAL.RETURN' | translate}}</span>
+        </button>
+    </ng-container>
+</div>
+
+
+<div class="col-wrapper">
+    <h2>{{'DELIVERY.DETAILS.DELIVERY_CONTENT_LIST_TITLE' | translate}}</h2>
+    <ng-container *ngIf="delivery">
+        <generic-table
+            [columns]="['TESTS.TYPE', 'DELIVERY_CONTENT.AMOUNT', 'DELIVERY_CONTENT.EXPIRES_AT']"
+            [items]="delivery.deliveryContent"
+            [itemTemplate]="itemTemplate"
+            [actionColumn]="false">
+            <ng-template #itemTemplate let-deliveryContent>
+                <td>{{deliveryContent.test.name}}</td>
+                <td>{{deliveryContent.amount}}</td>
+                <td>{{deliveryContent.expiresAt.toLocaleDateString()}}</td>
+            </ng-template>
+        </generic-table>
+    </ng-container>
+</div>

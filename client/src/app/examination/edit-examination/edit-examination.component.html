@@ -1,0 +1,12 @@
+<h2>{{'EXAMINATIONS.EDIT_TITLE' | translate}}</h2>
+<ng-container *ngIf="examination">
+    <examination-form
+        [examination]="examination"
+        [onValidSubmit]="editExamination"
+        [submitText]="'GLOBAL.SAVE_CHANGES'"
+        [returnUrl]="['/examinations', examination.id.toString(), 'details']">
+    </examination-form>
+    <button id="return-btn" mat-raised-button color="basic" [routerLink]="['/examinations']">
+        <span>{{'GLOBAL.CANCEL' | translate}}</span>
+    </button>
+</ng-container>

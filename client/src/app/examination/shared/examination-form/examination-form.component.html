@@ -1,0 +1,95 @@
+<form [formGroup]="fg" (ngSubmit)="handleSubmit()">
+
+    <mat-form-field appearance="outline" 
+      [ngClass]="{clickable: disabled}" 
+      [routerLink]="disabled ? ['/patients', examination!.patient!.id, 'details'] : []">
+      <mat-label>{{'PATIENTS.TYPE' | translate}}</mat-label>
+      <mat-select formControlName="patientId">
+        <ng-container *ngIf="!disabled else singlePatient" > 
+          <mat-option *ngFor="let patientOption of optionsPatients" [value]="patientOption.id" >
+            {{patientOption.firstName}} {{patientOption.lastName}} ({{patientOption.email}})
+          </mat-option>
+        </ng-container>
+        <ng-template #singlePatient>
+          <mat-option [value]="examination!.patient!.id">
+            {{examination!.patient!.firstName }} {{examination!.patient!.lastName}} ({{examination!.patient!.email}})
+          </mat-option>
+        </ng-template>
+      </mat-select>
+
+      <mat-error *ngIf="patientId?.errors?.['required']">{{'VALIDATION.FIELD_REQUIRED' | translate}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline"       
+      [ngClass]="{clickable: disabled}" 
+      [routerLink]="disabled ? ['/tests', examination!.test!.id, 'details'] : []">
+      <mat-label>{{'TESTS.TYPE' | translate}}</mat-label>
+      <mat-select formControlName="testId">
+        <ng-container *ngIf="!disabled else singleTest" > 
+          <mat-option *ngFor="let testOption of optionsTests" [value]="testOption.id">
+            {{testOption.name}}
+          </mat-option>
+        </ng-container>
+        <ng-template #singleTest>
+          <mat-option [value]="examination!.test!.id">
+            {{examination!.test!.name}}
+          </mat-option>
+        </ng-template>
+      </mat-select>
+  
+      <mat-error *ngIf="testId?.errors?.['required']">{{'VALIDATION.FIELD_REQUIRED' | translate}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>{{'EXAMINATIONS.ARRANGED_AT_DATE' | translate}}</mat-label>
+        <input matInput [matDatepicker]="picker" type="text" formControlName="arrangedAtDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+
+        <mat-error *ngIf="arrangedAtDate?.errors?.['required']">{{'VALIDATION.FIELD_REQUIRED' | translate}}</mat-error>
+      </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>{{'EXAMINATIONS.ARRANGED_AT_TIME' | translate}}</mat-label>
+        <mat-hint *ngIf="!disabled">{{'VALIDATION.HH:MM' | translate}}</mat-hint>
+        <input matInput formControlName="arrangedAtTime">
+
+        <mat-error *ngIf="arrangedAtTime?.errors?.['required']">{{'VALIDATION.FIELD_REQUIRED' | translate}}</mat-error>
+        <mat-error *ngIf="arrangedAtTime?.errors?.['pattern']">{{'VALIDATION.REQUIRED_FORMAT_IS_HH:MM' | translate}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{'EXAMINATIONS.RESULT.NAME' | translate}}</mat-label>
+      <mat-select formControlName="result">
+        <mat-option [value]="false">
+          {{'EXAMINATIONS.RESULT.NEGATIVE' | translate}}
+        </mat-option>
+        <mat-option [value]="true">
+          {{'EXAMINATIONS.RESULT.POSITIVE' | translate}}
+        </mat-option>
+        <mat-option [value]="-1">
+          {{'EXAMINATIONS.RESULT.NONE' | translate}}
+        </mat-option>
+      </mat-select>
+
+      <mat-error *ngIf="result?.errors?.['required']">{{'VALIDATION.FIELD_REQUIRED' | translate}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{'EXAMINATIONS.REFERAL' | translate}}</mat-label>
+      <mat-select formControlName="referal">
+        <mat-option [value]="true">
+          {{'GLOBAL.YES' | translate}}
+        </mat-option>
+        <mat-option [value]="false">
+          {{'GLOBAL.NO' | translate}}
+        </mat-option>
+      </mat-select>
+
+      <mat-error *ngIf="referal?.errors?.['required']">{{'VALIDATION.FIELD_REQUIRED' | translate}}</mat-error>
+    </mat-form-field>
+    
+    <button mat-raised-button color="accent" type="submit">
+        <span>{{submitText | translate}}</span>
+    </button>
+</form>

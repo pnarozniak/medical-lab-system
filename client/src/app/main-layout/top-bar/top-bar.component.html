@@ -1,0 +1,11 @@
+<div class="bar">
+    <img src="assets/images/logo.png" alt="logo" class="logo">
+    <h3 class="title">NowMed</h3>
+    <mat-form-field class="lang-select">
+        <mat-select [(value)]="activeLanguage" (selectionChange)="changeLanguage()">
+            <mat-option *ngFor="let lang of languages" [value]="lang">
+                {{'TOP_BAR.' + lang | translate}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>

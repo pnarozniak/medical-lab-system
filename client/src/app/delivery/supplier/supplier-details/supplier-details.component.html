@@ -1,0 +1,34 @@
+<div class="col-wrapper" id="left-col-wrapper">
+    <h2>{{'SUPPLIERS.DETAILS.TITLE' | translate}}</h2>
+    <ng-container *ngIf="supplier">
+        <supplier-form
+        [supplier]="supplier"
+        [disabled]="true">
+        </supplier-form>
+        <button id="edit-btn" mat-raised-button color="basic" [routerLink]="['/delivery/suppliers', supplier.id, 'edit']">
+            <span>{{'GLOBAL.EDIT' | translate}}</span>
+        </button>
+        <button id="return-btn" mat-raised-button color="basic" [routerLink]="['/delivery']">
+            <span>{{'GLOBAL.RETURN' | translate}}</span>
+        </button>
+    </ng-container>
+</div>
+
+<div class="col-wrapper">
+    <h2>{{'SUPPLIERS.DETAILS.DELIVERY_LIST_TITLE' | translate}}</h2>
+    <ng-container *ngIf="supplier">
+        <generic-table
+            [columns]="['DELIVERY.ID', 'DELIVERY.PLANNED_AT', 'DELIVERY.DELIVERED_AT']"
+            [items]="supplier.delivery"
+            [itemTemplate]="itemTemplate"
+            [actionColumn]="false"
+            [clickableRow]="true"
+            (rowClickedEmitter)="showDeliveryDetails($event)">
+            <ng-template #itemTemplate let-delivery []>
+                <td>{{delivery.id}}</td>
+                <td>{{delivery.plannedAt.toLocaleDateString()}}</td>
+                <td>{{delivery.deliveredAt ? delivery.deliveredAt.toLocaleDateString() : "-"}}</td>
+            </ng-template>
+        </generic-table>
+    </ng-container>
+</div>

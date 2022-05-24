@@ -1,0 +1,21 @@
+
+:host {
+    display: flex;
+    flex-direction: row;
+}
+
+.col-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+#left-col-wrapper {
+    margin-right: 4rem;
+}
+
+#return-btn, #edit-btn {
+    width: 300px;
+}
+#return-btn {
+    margin-top: 1rem;
+}

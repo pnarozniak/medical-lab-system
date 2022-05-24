@@ -1,0 +1,15 @@
+<h2>{{'DELIVERY.EDIT_TITLE' | translate}}</h2>
+<ng-container *ngIf="delivery">
+
+    <delivery-form
+        [delivery]="delivery"
+        [deliveryContent]="deliveryContent"
+        [onValidSubmit]="editDelivery"
+        [submitText]="'GLOBAL.SAVE_CHANGES'"
+        [returnUrl]="['/delivery', delivery.id.toString(), 'details']">
+    </delivery-form>
+
+    <button id="return-btn" mat-raised-button color="basic" [routerLink]="['/delivery']">
+        <span>{{'GLOBAL.CANCEL' | translate}}</span>
+    </button>
+</ng-container>

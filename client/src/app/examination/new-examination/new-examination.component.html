@@ -1,0 +1,9 @@
+<h2>{{'EXAMINATIONS.NEW_TITLE' | translate}}</h2>
+<examination-form
+    [submitText]="'EXAMINATIONS.ADD'"
+    [onValidSubmit]="createExamination"
+    [returnUrl]="['/examinations/new']">
+</examination-form>
+<button id="return-btn" mat-raised-button color="basic" [routerLink]="['/examinations']">
+    <span>{{'GLOBAL.CANCEL' | translate}}</span>
+</button>

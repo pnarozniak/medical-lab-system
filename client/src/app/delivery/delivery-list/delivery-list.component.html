@@ -1,0 +1,34 @@
+<h2>{{'SUPPLIERS.LIST_TITLE' | translate}}</h2>
+<button id="add-btn" mat-raised-button color="accent" [routerLink]="['/delivery/suppliers/new']">
+    <span>{{'SUPPLIERS.ADD' | translate}}</span>
+</button>
+<div id="wrapper">
+    <generic-table 
+        [columns]="['SUPPLIERS.NAME', 'SUPPLIERS.CONTACT_EMAIL']"
+        [items]="suppliers"
+        [itemTemplate]="itemTemplateSupplier"
+        [actionPrefix]="'/delivery/suppliers'"
+        [onDelete]="tryDelete">
+        <ng-template #itemTemplateSupplier let-supplier>
+        <td>{{supplier.name}}</td>
+        <td>{{supplier.contactEmail}}</td>
+        </ng-template>
+    </generic-table>
+</div>
+
+<h2>{{'DELIVERY.LIST_TITLE' | translate}}</h2>
+<button id="add-btn" mat-raised-button color="accent" [routerLink]="['/delivery/new']">
+    <span>{{'DELIVERY.ADD' | translate}}</span>
+</button>
+<generic-table 
+    [columns]="['DELIVERY.ID', 'DELIVERY.PLANNED_AT', 'DELIVERY.DELIVERED_AT']"
+    [items]="delivery"
+    [itemTemplate]="itemTemplateDelivery"
+    [actionPrefix]="'/delivery'"
+    [onDelete]="tryDelete">
+    <ng-template #itemTemplateDelivery let-delivery>
+       <td>{{delivery.id}}</td>
+       <td>{{delivery.plannedAt.toLocaleDateString()}}</td>
+       <td>{{delivery.deliveredAt ? delivery.deliveredAt.toLocaleDateString() : "-"}}</td>
+    </ng-template>
+</generic-table>

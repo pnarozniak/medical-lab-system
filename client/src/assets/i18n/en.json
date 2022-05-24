@@ -1,0 +1,227 @@
+{ 
+    "TOP_BAR": {
+      "de": "German",
+      "pl": "Polish",
+      "en": "English"
+    },
+    "SIDE_BAR": {
+      "HOME": "Home",
+      "PATIENTS": "Patients", 
+      "TESTS": "Tests",
+      "EXAMINATIONS": "Examinations",
+      "EMPLOYEES": "Employees",
+      "DELIVERY": "Warehouse",
+      "LOGIN": "Login", 
+      "LOGOUT": "Logout"
+    },
+    "AUTH": {
+      "LOGIN_TITLE": "Log in",
+      "EMAIL": "E-mail address",
+      "PASSWORD": "Password", 
+      "LOGIN": "Login",
+      "ROLES": {
+        "NAME": "Roles", 
+        "ADMIN": "Admin", 
+        "REGISTRATOR": "Registrator",
+        "LABORANT": "Lab technician"
+      }
+    },
+    "HOME": {
+      "TITLE": "Home page",
+      "GENERAL_DESCRIPTION": "Welcome to the \"NowMed\" medical laboratory management support system.",
+      "LIST": {
+        "HEADER": "The system allows for management of",
+        "PATIENTS": "Patients",
+        "TESTS": "Tests",
+        "EXAMINATIONS": "Examinations",
+        "EMPLOYEES": "Employees accounts",
+        "DELIVERY": "Delivery of tests",
+        "SUPPLIERS": "Suppliers"
+      }
+    },
+    "PATIENTS": {
+      "LIST_TITLE": "Patients list", 
+      "NEW_TITLE": "New patient",
+      "EDIT_TITLE": "Edit patient",
+      "DETAILS": {
+        "TITLE": "Patient details",
+        "EXAMINATIONS_LIST_TITLE": "Patient examinations"
+      },
+      "TRY_DELETE_TITLE": "Patient will be removed",
+      "TYPE": "Patient",
+      "FIRST_NAME": "First name",
+      "LAST_NAME": "Last name",
+      "EMAIL": "E-mail address",
+      "PHONE_NUMBER": "Phone number",
+      "BIRTHDATE": "Birthdate", 
+      "GENDER": {
+        "NAME": "Gender",
+        "MALE": "Male",
+        "FEMALE": "Female",
+        "NONE": "Not applicable"
+      },
+      "ADD": "Add patient"
+    },
+    "TESTS": {
+      "LIST_TITLE": "Tests list",
+      "NEW_TITLE": "New test", 
+      "EDIT_TITLE": "Edit test", 
+      "DETAILS": {
+        "TITLE": "Test details",
+        "EXAMINATIONS_LIST_TITLE": "Connected examinations"
+      },
+      "TRY_DELETE_TITLE": "Test will be removed",
+      "TYPE": "Test type",
+      "NAME": "Name", 
+      "EFFECTIVENESS": "Effectiveness",
+      "ESTIMATED_DURATION": "Estimated duration",
+      "CONTRAINDICATIONS": "Contraindications",
+      "ADD": "Add test"
+    },
+    "EXAMINATIONS": {
+      "LIST_TITLE": "Examinations list",
+      "NEW_TITLE": "New examination",
+      "EDIT_TITLE": "Edit examination",
+      "DETAILS_TITLE": "Examination details",
+      "TRY_DELETE_TITLE": "Examination will be removed",
+      "ARRANGED_AT": "Arranged at", 
+      "ARRANGED_AT_TIME": "Examination time",
+      "ARRANGED_AT_DATE": "Examination date",
+      "RESULT": {
+        "NAME": "Result", 
+        "POSITIVE": "Positive",
+        "NEGATIVE": "Negative",
+        "NONE": "None" 
+      },
+      "REFERAL": "Referal",
+      "ADD": "Add examination"
+    },
+    "EMPLOYEES": {
+      "LIST_TITLE": "Employees list", 
+      "NEW_TITLE": "New employee",
+      "DETAILS_TITLE": "Employee details",
+      "EDIT_TITLE": "Edit employee",
+      "ADD": "Add employee",
+      "TRY_DELETE_TITLE": "Employee account will be removed"
+    },
+    "DELIVERY": {
+      "LIST_TITLE": "Delivery list",
+      "NEW_TITLE": "New delivery",
+      "DETAILS": {
+        "TITLE": "Delivery details",
+        "DELIVERY_CONTENT_LIST_TITLE": "Delivery content"
+      },
+      "EDIT_TITLE": "Edit delivery",
+      "ADD": "Add delivery",
+      "ID": "Identifier",
+      "PLANNED_AT": "Planned at",
+      "DELIVERED_AT": "Delivered at",
+      "TRY_DELETE_TITLE": "Delivery will be removed",
+      "SUPPLIER": "Supplier",
+      "COMMENTS": "Comments",
+      "WAREHOUSE_REPORTS": "Warehouse Reports",
+      "SUPPLIERS_&_DELIVERY": "Suppliers & Delivery",
+      "GENERATE_REPORT": "Generate report",
+      "REPORT_START": "Report start date",
+      "REPORT_END": "Report end date",
+      "REPORT_DEMAND": "Analyze future demand",
+      "GENERATING_REPORT": "Generating report..."
+    },
+    "DELIVERY_CONTENT": {
+      "AMOUNT": "Amount",
+      "EXPIRES_AT": "Valid to date",
+      "ADD": "Add item",
+      "REMOVE": "Remove item"
+    },
+    "SUPPLIERS": {
+      "LIST_TITLE": "Suppliers list",
+      "NEW_TITLE": "New supplier",
+      "EDIT_TITLE": "Edit supplier",
+      "DETAILS": {
+        "TITLE": "Supplier details",
+        "DELIVERY_LIST_TITLE": "Supplier deliveries"
+      },
+      "ADD": "Add supplier",
+      "NAME": "Name",
+      "CONTACT_EMAIL": "Contact e-mail address",
+      "TRY_DELETE_TITLE": "Supplier will be removed"
+    },
+    "GLOBAL": {
+      "LIST_ACTIONS": "Actions",
+      "YES": "Yes", 
+      "NO": "No",
+      "CANCEL": "Cancel",
+      "RETURN": "Return",
+      "ARE_YOU_SURE": "Are you sure",
+      "SAVE_CHANGES": "Save changes",
+      "EDIT": "Edit",
+      "TIME": {
+        "H": "Hours", 
+        "M": "Minutes",
+        "S": "Seconds"
+      }
+    },
+    "ALERTS": {
+      "SUCCESS": {
+        "LOGIN": "Successfully logged in",
+        "LOGGED_OUT": "Successfully logged out",
+        "PATIENT_DELETED": "Patient has been deleted",
+        "PATIENT_CREATED": "Patient has been created",
+        "PATIENT_EDITED": "Patient has been modified",
+        "TEST_DELETED": "Test has been deleted", 
+        "TEST_CREATED": "Test has been created", 
+        "TEST_EDITED": "Test has been modified",
+        "EXAMINATION_DELETED": "Examination has been deleted",
+        "EXAMINATION_CREATED": "Examination has been created",
+        "EXAMINATION_EDITED": "Examination has been modified",
+        "EMPLOYEE_DELETED": "Employee account has been deleted",
+        "EMPLOYEE_CREATED": "Employee account has been created",
+        "EMPLOYEE_EDITED": "Employee has been edited",
+        "SUPPLIER_DELETED": "Supplier has been deleted",
+        "SUPPLIER_CREATED": "Supplier has been created",
+        "SUPPLIER_EDITED": "Supplier has been edited",
+        "DELIVERY_DELETED": "Delivery has been deleted",
+        "DELIVERY_CREATED": "Delivery has been created",
+        "DELIVERY_EDITED": "Delivery has been edited",
+        "REPORT_GENERATED": "Report has been generated"
+      },
+      "ERROR": {
+        "PATIENT_NOT_DELETED": "Error occurred while deleting patient",
+        "PATIENT_NOT_FOUND": "Patient not found",
+        "TEST_NOT_DELETED": "Error occurred while deleting test",
+        "TEST_NOT_FOUND": "Test not found",
+        "EXAMINATION_NOT_DELETED": "Error occurred while deleting examination",
+        "EXAMINATION_NOT_FOUND": "Examination not found",
+        "EMPLOYEE_NOT_FOUND": "Employee not found",
+        "EMPLOYEE_NOT_DELETED": "Error occurred while deleting employee account",
+        "SUPPLIER_NOT_FOUND": "Supplier not found",
+        "SUPPLIER_NOT_DELETED": "Error occurred while deleting supplier",
+        "DELIVERY_NOT_DELETED": "Error occurred while deleting delivery",
+        "SESSION_EXPIRED": "Your session has expired", 
+        "DELIVERY_NOT_FOUND": "Delivery not found",
+        "LOGIN_REQUIRED": "You must be logged in to perform this action",
+        "NO_ACCESS": "You don't have permissions to perform this action",
+        "REPORT_NOT_GENERATED": "Error occurred while generating report"
+      }
+    },
+    "VALIDATION": {
+      "WRONG_CREDENTIALS": "Wrong e-mail or password",
+      "SUBMIT_ERROR": "An error occurred while submitting the form",
+      "FIELD_REQUIRED": "Field is required",
+      "HH:MM": "HH:MM",
+      "REQUIRED_FORMAT_IS_HH:MM": "Required format is HH:MM",
+      "WRONG_FORMAT": "Wrong format",
+      "FORBIDDEN_PASSWORD": "Minimum 1 number and 1 capital character",
+      "MAX_ACCURACY": "Accuracy up to {{value}} decimals",
+      "EMAIL_ALREADY_TAKEN": "Email is already in use",
+      "LENGTH": {
+        "MIN": "Field must contain minimum {{value}} characters",
+        "MAX": "Field can contain maximum {{value}} characters"
+      },
+      "VALUE": {
+        "MIN": "Minimum value is {{value}}",
+        "MAX": "Maximum value is {{value}}"
+      }
+    }
+  }
+  

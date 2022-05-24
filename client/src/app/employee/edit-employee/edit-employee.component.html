@@ -1,0 +1,12 @@
+<h2>{{'EMPLOYEES.EDIT_TITLE' | translate}}</h2>
+<ng-container *ngIf="employee">
+    <employee-form
+        [employee]="employee"
+        [onValidSubmit]="editEmployee"
+        [submitText]="'GLOBAL.SAVE_CHANGES'"
+        [returnUrl]="['/employees', employee.id.toString(), 'details']">
+    </employee-form>
+    <button id="return-btn" mat-raised-button color="basic" [routerLink]="['/employees']">
+        <span>{{'GLOBAL.CANCEL' | translate}}</span>
+    </button>
+</ng-container>

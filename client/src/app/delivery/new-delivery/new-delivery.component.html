@@ -1,0 +1,9 @@
+<h2>{{'DELIVERY.NEW_TITLE' | translate}}</h2>
+<delivery-form 
+    [submitText]="'DELIVERY.ADD'"
+    [onValidSubmit]="createDelivery"
+    [returnUrl]="['/delivery/new']">
+</delivery-form>
+<button id="return-btn" mat-raised-button color="basic" [routerLink]="['/delivery']">
+    <span>{{'GLOBAL.CANCEL' | translate}}</span>
+</button>

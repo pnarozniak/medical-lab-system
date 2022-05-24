@@ -1,0 +1,16 @@
+<h2>{{'EXAMINATIONS.LIST_TITLE' | translate}}</h2>
+<button id="add-btn" mat-raised-button color="accent" [routerLink]="['/examinations/new']">
+    <span>{{'EXAMINATIONS.ADD' | translate}}</span>
+</button>
+<generic-table 
+    [columns]="['EXAMINATIONS.ARRANGED_AT', 'EXAMINATIONS.RESULT.NAME', 'EXAMINATIONS.REFERAL']"
+    [items]="examinations"
+    [itemTemplate]="itemTemplate"
+    [actionPrefix]="'/examinations'"
+    [onDelete]="tryDelete">
+    <ng-template #itemTemplate let-examination>
+       <td>{{examination.arrangedAt.toLocaleString() }}</td>
+       <td>{{(examination.result ? 'EXAMINATIONS.RESULT.POSITIVE' : examination.result === false ? 'EXAMINATIONS.RESULT.NEGATIVE' : 'EXAMINATIONS.RESULT.NONE') | translate}}</td>
+       <td>{{(examination.referal ? 'GLOBAL.YES' : 'GLOBAL.NO') | translate}}</td>
+    </ng-template>
+</generic-table>

@@ -1,0 +1,39 @@
+<form [formGroup]="fg" (ngSubmit)="handleSubmit()">
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{'SUPPLIERS.NAME' | translate}}</mat-label>
+      <input matInput type="text" formControlName="name">
+
+      <mat-error *ngIf="name?.errors?.['required']">
+        {{ 'VALIDATION.FIELD_REQUIRED' | translate}}
+      </mat-error>
+      <mat-error *ngIf="name?.errors?.['minlength']">
+        {{ 'VALIDATION.LENGTH.MIN' | translate: { value: 2 } }}
+      </mat-error>
+      <mat-error *ngIf="name?.errors?.['maxlength']">
+        {{ 'VALIDATION.LENGTH.MAX' | translate: { value: 60 } }}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{'SUPPLIERS.CONTACT_EMAIL' | translate}}</mat-label>
+      <input matInput type="email" formControlName="contactEmail">
+
+      <mat-error *ngIf="contactEmail?.errors?.['required']">
+        {{ 'VALIDATION.FIELD_REQUIRED' | translate}}
+      </mat-error>
+      <mat-error *ngIf="contactEmail?.errors?.['minlength']">
+        {{ 'VALIDATION.LENGTH.MIN' | translate: { value: 3 } }}
+      </mat-error>
+      <mat-error *ngIf="contactEmail?.errors?.['maxlength']">
+        {{ 'VALIDATION.LENGTH.MAX' | translate: { value: 60 } }}
+      </mat-error>
+      <mat-error *ngIf="contactEmail?.errors?.['forbiddenEmail'] && !contactEmail?.errors?.['minlength'] && !contactEmail?.errors?.['maxlength']">
+        {{ 'VALIDATION.WRONG_FORMAT' | translate }}
+      </mat-error>       
+    </mat-form-field>
+
+    <button mat-raised-button color="accent" type="submit">
+        <span>{{submitText  | translate}}</span>
+    </button>
+</form>

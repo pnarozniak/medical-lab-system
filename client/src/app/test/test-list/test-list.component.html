@@ -1,0 +1,16 @@
+<h2>{{'TESTS.LIST_TITLE' | translate}}</h2>
+<button id="add-btn" mat-raised-button color="accent" [routerLink]="['/tests/new']">
+    <span>{{'TESTS.ADD' | translate}}</span>
+</button>
+<generic-table 
+    [columns]="['TESTS.NAME', 'TESTS.EFFECTIVENESS', 'TESTS.ESTIMATED_DURATION']"
+    [items]="tests"
+    [itemTemplate]="itemTemplate"
+    [actionPrefix]="'/tests'"
+    [onDelete]="tryDelete">
+    <ng-template #itemTemplate let-test>
+       <td>{{test.name}}</td>
+       <td>{{test.effectiveness}}</td>
+       <td>{{test.estimatedDuration}}</td>
+    </ng-template>
+</generic-table>

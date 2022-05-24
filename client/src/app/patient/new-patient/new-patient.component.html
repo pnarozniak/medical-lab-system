@@ -1,0 +1,9 @@
+<h2>{{'PATIENTS.NEW_TITLE' | translate}}</h2>
+<patient-form 
+    [submitText]="'PATIENTS.ADD'"
+    [onValidSubmit]="createPatient"
+    [returnUrl]="['/patients/new']">
+</patient-form>
+<button id="return-btn" mat-raised-button color="basic" [routerLink]="['/patients']">
+    <span>{{'GLOBAL.CANCEL' | translate}}</span>
+</button>

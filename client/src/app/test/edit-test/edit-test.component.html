@@ -1,0 +1,12 @@
+<h2>{{'TESTS.EDIT_TITLE' | translate}}</h2>
+<ng-container *ngIf="test">
+    <test-form
+        [test]="test"
+        [onValidSubmit]="editTest"
+        [submitText]="'GLOBAL.SAVE_CHANGES'"
+        [returnUrl]="['/tests', test.id.toString(), 'details']">
+    </test-form>
+    <button id="return-btn" mat-raised-button color="basic" [routerLink]="['/tests']">
+        <span>{{'GLOBAL.CANCEL' | translate}}</span>
+    </button>
+</ng-container>

@@ -1,0 +1,93 @@
+<form [formGroup]="fg" (ngSubmit)="handleSubmit()">
+
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PATIENTS.FIRST_NAME' | translate}}</mat-label>
+        <input matInput type="text" formControlName="firstName">
+
+        <mat-error *ngIf="firstName?.errors?.['required']">
+          {{ 'VALIDATION.FIELD_REQUIRED' | translate}}
+        </mat-error>
+        <mat-error *ngIf="firstName?.errors?.['minlength']">
+          {{ 'VALIDATION.LENGTH.MIN' | translate: { value: 2 } }}
+        </mat-error>
+        <mat-error *ngIf="firstName?.errors?.['maxlength']">
+          {{ 'VALIDATION.LENGTH.MAX' | translate: { value: 30 } }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PATIENTS.LAST_NAME' | translate}}</mat-label>
+        <input matInput type="text" formControlName="lastName">
+
+        <mat-error *ngIf="lastName?.errors?.['required']">
+          {{ 'VALIDATION.FIELD_REQUIRED' | translate}}
+        </mat-error>
+        <mat-error *ngIf="lastName?.errors?.['minlength']">
+          {{ 'VALIDATION.LENGTH.MIN' | translate: { value: 2 } }}
+        </mat-error>
+        <mat-error *ngIf="lastName?.errors?.['maxlength']">
+          {{ 'VALIDATION.LENGTH.MAX' | translate: { value: 30 } }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PATIENTS.GENDER.NAME' | translate}}</mat-label>
+        <mat-select formControlName="gender">
+          <mat-option value="1">
+            {{'PATIENTS.GENDER.MALE' | translate}}
+          </mat-option>
+          <mat-option value="2">
+            {{'PATIENTS.GENDER.FEMALE' | translate}}
+          </mat-option>
+          <mat-option value="9">
+            {{'PATIENTS.GENDER.NONE' | translate}}
+          </mat-option>
+        </mat-select>
+
+        <mat-error *ngIf="gender?.errors?.['required']">
+          {{ 'VALIDATION.FIELD_REQUIRED' | translate}}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PATIENTS.BIRTHDATE' | translate}}</mat-label>
+        <input matInput [matDatepicker]="picker" type="text" formControlName="birthdate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+
+        <mat-error *ngIf="birthdate?.errors?.['required']">
+          {{ 'VALIDATION.FIELD_REQUIRED' | translate}}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PATIENTS.EMAIL' | translate}}</mat-label>
+        <input matInput type="email" formControlName="email">
+
+        <mat-error *ngIf="email?.errors?.['required']">
+          {{ 'VALIDATION.FIELD_REQUIRED' | translate}}
+        </mat-error>
+        <mat-error *ngIf="email?.errors?.['minlength']">
+          {{ 'VALIDATION.LENGTH.MIN' | translate: { value: 3 } }}
+        </mat-error>
+        <mat-error *ngIf="email?.errors?.['maxlength']">
+          {{ 'VALIDATION.LENGTH.MAX' | translate: { value: 60 } }}
+        </mat-error>
+        <mat-error *ngIf="email?.errors?.['forbiddenEmail'] && !email?.errors?.['minlength'] && !email?.errors?.['maxlength']">
+          {{ 'VALIDATION.WRONG_FORMAT' | translate }}
+        </mat-error>       
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PATIENTS.PHONE_NUMBER' | translate}}</mat-label>
+        <input matInput type="text" formControlName="phoneNumber">
+
+        <mat-error *ngIf="phoneNumber?.errors?.['pattern']">
+          {{ 'VALIDATION.WRONG_FORMAT' | translate }}
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="accent" type="submit">
+          <span>{{submitText  | translate}}</span>
+      </button>
+</form>

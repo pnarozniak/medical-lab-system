@@ -1,0 +1,77 @@
+<form [formGroup]="fg" (ngSubmit)="handleSubmit()">
+    <mat-form-field appearance="outline">
+        <mat-label>{{'TESTS.NAME' | translate}}</mat-label>
+        <input matInput type="text" formControlName="name">
+
+        <mat-error *ngIf="name?.errors?.['required']">
+            {{ 'VALIDATION.FIELD_REQUIRED' | translate}}
+        </mat-error>
+        <mat-error *ngIf="name?.errors?.['minlength']">
+            {{ 'VALIDATION.LENGTH.MIN' | translate: { value: 2 } }}
+        </mat-error>
+        <mat-error *ngIf="name?.errors?.['maxlength']">
+            {{ 'VALIDATION.LENGTH.MAX' | translate: { value: 30 } }}
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>{{'TESTS.EFFECTIVENESS' | translate}}</mat-label>
+        <mat-hint *ngIf="!disabled">0-100</mat-hint>
+
+        <input matInput type="number" formControlName="effectiveness">
+        <span matSuffix>%&nbsp;</span>
+ 
+        <mat-error *ngIf="effectiveness?.errors?.['required']">
+            {{ 'VALIDATION.FIELD_REQUIRED' | translate}}
+        </mat-error>
+        <mat-error *ngIf="effectiveness?.errors?.['min']">
+            {{ 'VALIDATION.VALUE.MIN' | translate: {value: 0} }}
+        </mat-error>
+        <mat-error *ngIf="effectiveness?.errors?.['max']">
+            {{ 'VALIDATION.VALUE.MAX' | translate: {value: 100} }}
+        </mat-error>
+        <mat-error *ngIf="
+            !effectiveness?.errors?.['min'] && 
+            !effectiveness?.errors?.['max'] && 
+            effectiveness?.errors?.['pattern']">
+            {{ 'VALIDATION.MAX_ACCURACY' | translate: {value: 2} }}
+        </mat-error>
+    </mat-form-field>
+
+    <div id="estimated-duration-wrapper">
+        <mat-form-field appearance="outline">
+            <mat-label>{{'GLOBAL.TIME.H' | translate}}</mat-label>
+            <mat-hint *ngIf="!disabled">0-23</mat-hint>
+            <input matInput type="number" formControlName="hours">
+
+            <mat-error *ngIf="hours?.errors">0-59</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>{{'GLOBAL.TIME.M' | translate}}</mat-label>
+            <mat-hint *ngIf="!disabled">0-59</mat-hint>
+            <input matInput type="number" formControlName="minutes">
+
+            <mat-error *ngIf="hours?.errors">0-59</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>{{'GLOBAL.TIME.S' | translate}}</mat-label>
+            <mat-hint *ngIf="!disabled">0-59</mat-hint>
+            <input matInput type="number" formControlName="seconds">
+
+            <mat-error *ngIf="hours?.errors">0-59</mat-error>
+        </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="outline">
+        <mat-label>{{'TESTS.CONTRAINDICATIONS' | translate}}</mat-label>
+        <textarea matInput formControlName="contraindications"></textarea>
+
+        <mat-error *ngIf="contraindications?.errors?.['maxlength']">
+            {{'VALIDATION.LENGTH.MAX' | translate: {value: 500} }}
+        </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="accent" type="submit">
+        <span>{{submitText | translate}}</span>
+    </button>
+</form>
